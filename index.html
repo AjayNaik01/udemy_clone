@@ -2,293 +2,280 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Udemy Clone</title>
 
-        nav {
-            border: 2px solid rgb(205, 204, 204);
-            padding: 3px 30px;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        img {
-            width: 70px;
-            height: 70px;
-        }
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-        .nav-ul {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    nav {
+      border: 2px solid #cdcccc;
+      padding: 3px 30px;
+    }
 
-        li {
-            list-style: none;
-            color: rgb(111, 105, 105);
-            font-size: 12px;
-            padding: 8px;
-        }
+    .nav-ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .profile {
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-        }
+    li {
+      list-style: none;
+      font-size: 12px;
+      padding: 8px;
+      color: #6f6969;
+    }
 
-        input {
-            width: 700px;
-            height: 45px;
-            border-radius: 30px;
-            border: 1px solid #777676;
-            padding-left: 50px;
-        }
+    img.logo {
+      width: 81px;
+      height: 34px;
+    }
 
-        .logo {
-            width: 81px;
-            height: 34px;
-        }
+    img.nav-a,
+    img.profile {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+    }
 
-        .nav-a {
-            border-radius: 50%;
-            width: 22px;
-            height: 22px;
-        }
+    .search-box {
+      position: relative;
+    }
 
-        .hover-effect:hover {
-            color: rgb(61, 148, 192);
-            cursor: pointer;
-            background-color: rgb(141, 172, 187);
-            border-radius: 4px;
-            padding: 10px 8px;
-        }
+    .search-box input {
+      width: 700px;
+      height: 35px;
+      padding-left: 30px;
+      border: 1px solid #777;
+      border-radius: 25px;
+    }
 
-        .nav-2 {
-            justify-items: center;
-            border: 2px solid rgb(205, 204, 204);
-            border-top: none;
-            height: 50px;
-            line-height: 30px;
-            position: relative;
-        }
+    .search-box svg {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      fill: gray;
+    }
 
-        .nav-ul-2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .hover-effect:hover {
+      color: #3d94c0;
+      background-color: #8dacab;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 10px 8px;
+    }
 
-        a {
-            text-decoration: none;
-            color: rgb(103, 103, 103);
-            padding: 18px 7px;
-        }
+    /* Secondary nav */
+    .nav-2 {
+      border: 2px solid #cdcccc;
+      border-top: none;
+      height: 50px;
+      position: relative;
+    }
 
-        a:hover {
-            background-color: rgb(141, 172, 187);
-        }
+    .nav-ul-2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .triangle {
-            width: 0;
-            height: 0;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-top: 10px solid black;
-            position: absolute;
-            display: none;
-        }
+    .nav-ul-2 a {
+      text-decoration: none;
+      color: #676767;
+      padding: 18px 7px;
+    }
 
-        .rotate-180 {
-            transform: rotate(180deg);
-            margin-top: -10px;
-        }
+    .nav-ul-2 a:hover {
+      background-color: #8dacab;
+    }
 
+    .triangle {
+      position: absolute;
+      display: none;
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 10px solid black;
+    }
 
-        /* hide nav */
-        .hide-nav {
-            background-color: black;
-            display: none;
-            height: 44px;
-            position: absolute;
-            width: 100vw;
-        }
+    .rotate-180 {
+      transform: rotate(180deg);
+      margin-top: -10px;
+    }
 
-        .hide-ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            color: white;
-        }
+    /* Hidden Nav Dropdown */
+    .hide-nav {
+      display: none;
+      background-color: black;
+      color: white;
+      height: 44px;
+      width: 100vw;
+      position: absolute;
+    }
 
-        .hide-nav li {
-            color: white;
-            margin-top: 7px;
-            font-size: 12px;
-        }
+    .hide-ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      height: 100%;
+    }
 
-        .container {
-            margin: 25px 70px 30px 125px;
-            display: flex;
-        }
+    .hide-ul li {
+      font-size: 12px;
+      margin-top: 7px;
+    }
 
-        .heading {
-            margin-left: 20px;
-        }
+    /* Welcome Section */
+    .container {
+      margin: 25px 70px 30px 125px;
+      display: flex;
+      align-items: center;
+    }
 
-        .heading-2 {
-            margin-top: 10px;
-            margin-left: 20px;
-        }
+    .letter-profile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 66px;
+      height: 66px;
+      background-color: black;
+      color: aliceblue;
+      font-size: 20px;
+      font-weight: 500;
+      border-radius: 50%;
+    }
 
-        span a {
-            color: blue;
-            text-decoration: underline;
+    .heading {
+      margin-left: 20px;
+    }
 
-        }
+    .heading-2 {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
 
-        span a:hover {
-            color: white;
-            border-radius: 7px;
-            background-color: rgb(178, 178, 244);
-            padding: 8px 6px;
-            text-decoration: underline;
-        }
+    .heading-2 a {
+      color: blue;
+      text-decoration: underline;
+    }
 
-        .letter-profile {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 66px;
-            height: 66px;
-            background-color: rgb(0, 0, 0);
-            font-size: 20px;
-            font-weight: 500;
-            color: aliceblue;
-            border-radius: 50%;
-        }
-    </style>
+    .heading-2 a:hover {
+      color: white;
+      background-color: #b2b2f4;
+      border-radius: 7px;
+      padding: 8px 6px;
+    }
+
+    main img {
+      margin-left: 125px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 
 <body>
-    <nav>
-        <div class="navbar">
-            <ul class="nav-ul">
 
-                <li>
-                    <img class="logo" width="91" height="34" alt src="./images/logo-udemy.svg" alt="" />
-                </li>
-                <li class="hover-effect">Explore</li>
-                <li class="search-box">
-                    <div style="position: relative; display: inline-block;">
-                        <svg xmlns="./images/icons8-search-50.png"
-                            style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);" fill="gray"
-                            width="16" height="16" viewBox="0 0 24 24">
-                            <path
-                                d="M10 2a8 8 0 015.899 13.684l5.712 5.712-1.415 1.414-5.712-5.711A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z" />
-                        </svg>
-                        <input type="text" placeholder="Search..."
-                            style="padding-left: 30px; height: 35px; font-family: Arial, sans-serif; border: 1px solid #ccc; border-radius: 25px;">
-                    </div>
-                </li>
-                <li class="hover-effect">Udamy Bussiness</li>
-                <li class="hover-effect">teach on Udamy</li>
-                <li class="hover-effect">My learnings</li>
-                <li class="hover-effect">
-                    <img class="nav-a" class="profile" src="./images/icons8-heart-100 (1).png" alt="" />
-                </li>
-                <li class="hover-effect">
-                    <img class="nav-a" src="./images/icons8-cart-100.png" alt="" />
-                </li>
-                <li class="hover-effect">
-                    <img class="nav-a" src="./images/icons8-bell-100.png" alt="" />
-                </li>
-                <li class="hover-effect">
-                    <img class="nav-a" src="../images/Profile.jpeg" alt="" />
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <!-- Main Navbar -->
+  <nav>
+    <ul class="nav-ul">
+      <li><img class="logo" src="./images/logo-udemy.svg" alt="Udemy Logo" /></li>
+      <li class="hover-effect">Explore</li>
+      <li class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24">
+          <path d="M10 2a8 8 0 015.899 13.684l5.712 5.712-1.415 1.414-5.712-5.711A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z" />
+        </svg>
+        <input type="text" placeholder="Search..." />
+      </li>
+      <li class="hover-effect">Udemy Business</li>
+      <li class="hover-effect">Teach on Udemy</li>
+      <li class="hover-effect">My Learnings</li>
+      <li class="hover-effect"><img class="nav-a" src="./images/icons8-heart-100 (1).png" alt="Wishlist" /></li>
+      <li class="hover-effect"><img class="nav-a" src="./images/icons8-cart-100.png" alt="Cart" /></li>
+      <li class="hover-effect"><img class="nav-a" src="./images/icons8-bell-100.png" alt="Notifications" /></li>
+      <li class="hover-effect"><img class="profile" src="../images/Profile.jpeg" alt="Profile" /></li>
+    </ul>
+  </nav>
 
-    <div>
-        <div class="nav-2">
-            <div class="triangle"></div>
-            <ul class="nav-ul-2">
-                <li><a class="hover-trigger" href="">Development</a></li>
-                <li><a class="hover-trigger" href="">Business</a></li>
-                <li><a class="hover-trigger" href="">Finance and Accounting</a></li>
-                <li><a class="hover-trigger" href="">IT & Software</a></li>
-                <li><a class="hover-trigger" href="">Office Productivity</a></li>
-                <li><a class="hover-trigger" href="">Personal Development</a></li>
-                <li><a class="hover-trigger" href="">Design</a></li>
-                <li><a class="hover-trigger" href="">Marketing</a></li>
-                <li><a class="hover-trigger" href="">Health & Fitness</a></li>
-                <li><a class="hover-trigger" href="">Music</a></li>
-            </ul>
-        </div>
+  <!-- Category Navigation -->
+  <div class="nav-2">
+    <div class="triangle"></div>
+    <ul class="nav-ul-2">
+      <li><a class="hover-trigger" href="#">Development</a></li>
+      <li><a class="hover-trigger" href="#">Business</a></li>
+      <li><a class="hover-trigger" href="#">Finance & Accounting</a></li>
+      <li><a class="hover-trigger" href="#">IT & Software</a></li>
+      <li><a class="hover-trigger" href="#">Office Productivity</a></li>
+      <li><a class="hover-trigger" href="#">Personal Development</a></li>
+      <li><a class="hover-trigger" href="#">Design</a></li>
+      <li><a class="hover-trigger" href="#">Marketing</a></li>
+      <li><a class="hover-trigger" href="#">Health & Fitness</a></li>
+      <li><a class="hover-trigger" href="#">Music</a></li>
+    </ul>
+  </div>
+
+  <!-- Hidden Dropdown -->
+  <div class="hide-nav hide-nav-1">
+    <ul class="hide-ul">
+      <li>Web Development</li>
+      <li>Mobile Development</li>
+      <li>Programming Languages</li>
+      <li>Game Development</li>
+      <li>Database Design</li>
+      <li>Software Testing</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <div class="letter-profile">A</div>
+      <div>
+        <h1 class="heading">Welcome back, Ajay</h1>
+        <h3 class="heading-2">
+          Web Developer <span><a href="#">Edit occupation and interest</a></span>
+        </h3>
+      </div>
     </div>
 
     <div>
-        <div class="hide-nav hide-nav-1">
-            <ul class="hide-ul">
-                <li>Web development</li>
-                <li>Mobile development</li>
-                <li>Programming languages</li>
-                <li>Game Development</li>
-                <li>Database Design & Development</li>
-                <li>Database Design & Development</li>
-                <li>Software testing</li>
-            </ul>
-        </div>
+      <img src="./images/main.jpg" width="200" height="200" alt="Main Banner" />
     </div>
-    <main>
-        <div class="container">
-            <div class="letter-profile">
-                <h1> A</h1>
-            </div>
-            <div>
-                <h1 class="heading">Welcome back, Ajay</h1>
-                <h3 class="heading-2">Web developer <span><a href="">Edit occupation and interest</a></span></h3>
-            </div>
+  </main>
 
+  <!-- JS for Hover Dropdown -->
+  <script>
+    const hoverElements = document.querySelectorAll('.hover-trigger');
+    const triangle = document.querySelector('.triangle');
+    const hideNav = document.querySelector('.hide-nav');
 
-        </div>
+    hoverElements.forEach(item => {
+      item.addEventListener('mouseover', (e) => {
+        const rect = e.target.getBoundingClientRect();
+        triangle.style.left = `${rect.left + rect.width / 2 - 7}px`;
+        triangle.style.top = `${rect.bottom + window.scrollY - 60}px`;
+        triangle.classList.add('rotate-180');
+        triangle.style.display = 'block';
+        hideNav.style.display = 'block';
+      });
 
+      item.addEventListener('mouseout', () => {
+        triangle.style.display = 'none';
+        hideNav.style.display = 'none';
+      });
+    });
+  </script>
 
-
-        <div>
-            <img src="./images/main.jpg" width="200px" height="200px" alt="">
-        </div>
-    </main>
-
-
-
-    <script>
-        const hoverElements = document.querySelectorAll('.hover-trigger');
-        const triangle = document.querySelector('.triangle');
-        const hide_nav = document.querySelector('.hide-nav');
-
-        hoverElements.forEach((element) => {
-            element.addEventListener('mouseover', (event) => {
-                const rect = event.target.getBoundingClientRect();
-                triangle.style.left = `${rect.left + rect.width / 2 - 7}px`; // Center the triangle
-                triangle.style.top = `${rect.bottom + window.scrollY - 60}px`; // Position below the item
-                triangle.classList.add('rotate-180');
-                hide_nav.style.display = 'block';
-                triangle.style.display = 'block';
-            });
-
-            element.addEventListener('mouseout', () => {
-                triangle.style.display = 'none';
-                hide_nav.style.display = 'none';
-            });
-        });
-    </script>
 </body>
-
 </html>
