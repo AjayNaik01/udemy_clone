@@ -1,5 +1,4 @@
-
-    * {
+ * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -7,38 +6,55 @@
 
     body {
       font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
     }
 
+    /* --- Navbar --- */
     nav {
-      border: 2px solid #cdcccc;
-      padding: 3px 30px;
+      border-bottom: 1px solid #cdcccc;
+      padding: 8px 30px;
+      background-color: white;
     }
 
     .nav-ul {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
-    li {
+    .nav-ul li {
       list-style: none;
       font-size: 12px;
-      padding: 8px;
       color: #6f6969;
+      margin: 0 5px;
     }
 
-    img.logo {
+    .logo {
       width: 81px;
       height: 34px;
     }
 
-    img.nav-a,
-    img.profile {
+    .nav-a,
+    .profile {
       width: 22px;
       height: 22px;
       border-radius: 50%;
     }
 
+    .hover-effect {
+      padding: 8px;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .hover-effect:hover {
+      color: #3d94c0;
+      background-color: #e0e0e0;
+      cursor: pointer;
+    }
+
+    /* --- Search Bar --- */
     .search-box {
       position: relative;
     }
@@ -49,6 +65,7 @@
       padding-left: 30px;
       border: 1px solid #777;
       border-radius: 25px;
+      outline: none;
     }
 
     .search-box svg {
@@ -59,36 +76,40 @@
       fill: gray;
     }
 
-    .hover-effect:hover {
-      color: #3d94c0;
-      background-color: #8dacab;
-      border-radius: 4px;
-      cursor: pointer;
-      padding: 10px 8px;
-    }
-
-    /* Secondary nav */
+    /* --- Second Nav --- */
     .nav-2 {
-      border: 2px solid #cdcccc;
       border-top: none;
+      border-bottom: 1px solid #cdcccc;
+      background-color: white;
       height: 50px;
+      display: flex;
+      align-items: center;
       position: relative;
     }
 
     .nav-ul-2 {
       display: flex;
       justify-content: center;
-      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-ul-2 li {
+      list-style: none;
     }
 
     .nav-ul-2 a {
       text-decoration: none;
       color: #676767;
-      padding: 18px 7px;
+      padding: 18px 12px;
+      display: inline-block;
+      font-size: 13px;
+      transition: background-color 0.2s;
     }
 
     .nav-ul-2 a:hover {
       background-color: #8dacab;
+      color: white;
+      border-radius: 5px;
     }
 
     .triangle {
@@ -106,7 +127,7 @@
       margin-top: -10px;
     }
 
-    /* Hidden Nav Dropdown */
+    /* --- Dropdown --- */
     .hide-nav {
       display: none;
       background-color: black;
@@ -114,6 +135,9 @@
       height: 44px;
       width: 100vw;
       position: absolute;
+      top: 50px;
+      left: 0;
+      z-index: 999;
     }
 
     .hide-ul {
@@ -126,36 +150,37 @@
 
     .hide-ul li {
       font-size: 12px;
-      margin-top: 7px;
     }
 
-    /* Welcome Section */
+    /* --- Welcome Section --- */
     .container {
-      margin: 25px 70px 30px 125px;
+      margin: 40px 70px;
       display: flex;
       align-items: center;
+      gap: 20px;
     }
 
     .letter-profile {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       width: 66px;
       height: 66px;
       background-color: black;
       color: aliceblue;
       font-size: 20px;
-      font-weight: 500;
+      font-weight: bold;
       border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .heading {
-      margin-left: 20px;
+      font-size: 24px;
+      font-weight: bold;
     }
 
     .heading-2 {
-      margin-left: 20px;
       margin-top: 10px;
+      font-size: 16px;
     }
 
     .heading-2 a {
@@ -166,11 +191,12 @@
     .heading-2 a:hover {
       color: white;
       background-color: #b2b2f4;
-      border-radius: 7px;
-      padding: 8px 6px;
+      border-radius: 5px;
+      padding: 6px;
     }
 
     main img {
       margin-left: 125px;
       margin-top: 10px;
+      border-radius: 8px;
     }
